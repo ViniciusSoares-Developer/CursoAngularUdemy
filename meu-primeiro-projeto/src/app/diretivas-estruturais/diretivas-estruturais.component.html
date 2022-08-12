@@ -1,0 +1,29 @@
+<p *ngIf="condition; else elseBlock">True</p>
+<ng-template #elseBlock>
+  <p>False</p>
+</ng-template>
+
+<hr />
+
+<button (click)="onClick()">Mudar</button>
+<p *ngIf="conditionClick">Visivel</p>
+
+<ul>
+  <li
+    *ngFor="let pessoa of list; index as i; first as isfirst; last as isLast"
+    (click)="onClickEventList(i)"
+  >
+    {{ i }} - {{ pessoa.nome }} <span *ngIf="isfirst">First</span>
+    <span *ngIf="isLast">Last</span>
+  </li>
+</ul>
+<button (click)="onClickAddList()">Add</button>
+
+<hr />
+
+<input type="text" [(ngModel)]="nome" />
+<div [ngSwitch]="nome">
+  <p *ngSwitchCase="'denner'">Denner</p>
+  <p *ngSwitchCase="'nay'">Nay</p>
+  <p *ngSwitchDefault>Sem nome</p>
+</div>

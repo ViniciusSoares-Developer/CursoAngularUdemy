@@ -1,0 +1,16 @@
+<ng-content select="h1"></ng-content>
+
+<p [ngClass]="{'active': valor, 'disable': !valor}">ngClass</p>
+<p class="active" [ngStyle]="{'height': height}">ngClass</p>
+
+<ng-template *ngIf="verdadeiro">
+    <p>True</p>
+</ng-template>
+<ng-template ngFor let-item [ngForOf]="nome">
+    <p>{{item}}</p>
+</ng-template>
+
+<input type="text" [(ngModel)]="input">
+<p>{{input}}</p>
+
+<ng-content select="hr"></ng-content>
